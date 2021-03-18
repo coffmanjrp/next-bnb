@@ -1,11 +1,12 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { connectToDatabase } from '../util/mongodb';
 
-export default function Home({ properties }) {
+const Home = ({ properties }) => {
   return (
     <div>
       <Head>
-        <title>Next BnB</title>
+        <title>Home | Next BnB</title>
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
@@ -48,12 +49,11 @@ export default function Home({ properties }) {
                   )
                 </div>
                 <div className="text-center py-2 my-2">
-                  <a
-                    href="/listing/{property._id}"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded inline-block py-2 px-4"
-                  >
-                    Details
-                  </a>
+                  <Link href={`/listing/${property.id}`}>
+                    <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded inline-block py-2 px-4">
+                      Details
+                    </a>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -61,7 +61,7 @@ export default function Home({ properties }) {
       </div>
     </div>
   );
-}
+};
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
@@ -92,3 +92,5 @@ export async function getServerSideProps(context) {
     props: { properties },
   };
 }
+
+export default Home;

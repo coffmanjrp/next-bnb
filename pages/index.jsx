@@ -6,8 +6,9 @@ const Home = ({ properties }) => {
   return (
     <div>
       <Head>
-        <title>Home | Next BnB</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Home | Next BnB</title>
       </Head>
 
       <div className="container mx-auto">

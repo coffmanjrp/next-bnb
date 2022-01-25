@@ -6,8 +6,9 @@ const Listing = ({ property }) => {
   return (
     <div>
       <Head>
-        <title>Next BnB</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Next BnB</title>
       </Head>
 
       {property && (

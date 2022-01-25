@@ -52,6 +52,6 @@ Enjoy!
 ## Stacks
 
 - [Next.js](https://nextjs.org/)
-- [React](https://reactjs.org/
+- [React](https://reactjs.org/)
 - [MongoDB](https://www.mongodb.com/)
 - [Tailwindcss](https://tailwindcss.com/)

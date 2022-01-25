@@ -1,18 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { connectToDatabase } from '../../util/mongodb';
+import { connectToDatabase } from '../../utils/mongodb';
 
 const Listing = ({ property }) => {
-  console.log(property);
   return (
     <div>
       <Head>
         <title>Next BnB</title>
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-          rel="stylesheet"
-        />
       </Head>
 
       {property && (
@@ -40,8 +35,11 @@ const Listing = ({ property }) => {
                 <p className="text-gray-700 text-base">{property.summary}</p>
               </div>
               <div className="px-6 py-4">
-                {property.amenities.map((amenity) => (
-                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 m-1 text-sm font-semibold">
+                {property.amenities.map((amenity, index) => (
+                  <span
+                    key={index}
+                    className="inline-block bg-gray-200 rounded-full px-3 py-1 m-1 text-sm font-semibold"
+                  >
                     {amenity}
                   </span>
                 ))}

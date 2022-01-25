@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { connectToDatabase } from '../util/mongodb';
+import { connectToDatabase } from '../utils/mongodb';
 
 const Home = ({ properties }) => {
   return (
@@ -8,10 +8,6 @@ const Home = ({ properties }) => {
       <Head>
         <title>Home | Next BnB</title>
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-          rel="stylesheet"
-        />
       </Head>
 
       <div className="container mx-auto">
@@ -25,7 +21,7 @@ const Home = ({ properties }) => {
             properties.map((property) => (
               <div
                 key={property.id}
-                className="sm:flex-auto md:w-1/5 rounded overflow-hidden shadow-lg m-2"
+                className="flex-auto md:w-1/5 rounded overflow-hidden shadow-lg m-2"
               >
                 <img
                   src={property.image}
@@ -39,8 +35,7 @@ const Home = ({ properties }) => {
                   <p>{property.address.street}</p>
                   <p className="text-gray-700 text-base">{property.summary}</p>
                 </div>
-
-                <div className="text-center py-2 my-2 font-bold">
+                <div className="text-center py-2 my-2 font-bold my-auto">
                   <span className="text-green-500">${property.price}</span>
                   /night (+
                   <span className="text-green-500">
@@ -48,7 +43,7 @@ const Home = ({ properties }) => {
                   </span>
                   )
                 </div>
-                <div className="text-center py-2 my-2">
+                <div className="flex-1 text-center py-2 my-2">
                   <Link href={`/listing/${property.id}`}>
                     <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded inline-block py-2 px-4">
                       Details

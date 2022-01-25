@@ -1,4 +1,4 @@
-import { connectToDatabase } from '../../util/mongodb';
+import { connectToDatabase } from '../../utils/mongodb';
 
 async function handler(req, res) {
   const { db } = await connectToDatabase();

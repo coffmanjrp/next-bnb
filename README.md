@@ -48,7 +48,7 @@ yarn dev
 
 Enjoy!
 
-## Stacks
+## Stack
 
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
